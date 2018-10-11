@@ -1,49 +1,354 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>It’s just makeup! How to care about CSS</title>
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/fauxparse.css">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>It’s just makeup!</h1>
+          <h3>How to care about CSS</h3>
+          <p>
+            Matt Powell (<a href="http://twitter.com/fauxparse">@fauxparse</a>)<br/>
+            October 2018
+          </p>
+        </section>
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+        <section>
+          <h2>Disclaimer:</h2>
+          <p>This talk contains generalisations.</p>
+          <p>Please don’t get mad just yet.</p>
+        </section>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+        <section>
+          <h2>My background</h2>
+          <p class="fragment">Started learning CSS in the late 1990s</p>
+          <p class="fragment">Computer Science degree</p>
+          <p class="fragment">20+ years as a web and print designer</p>
+        </section>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+        <section>
+          <blockquote class="steve-quote">
+            <img src="images/steve.jpg" alt="Steve Purcell"/>
+            <p>
+              My grandad couldn't abide poorly polished shoes, so my mum would
+              leave her shoes near him, and he'd be incapable of resisting
+              polishing them.
+            </p>
+            <p>
+              At <del>redacted</del>, we all do the same thing with Matt
+              and our CSS.
+            </p>
+          </blockquote>
+        </section>
+
+        <section>
+          <h6>There are a lot of</h6>
+          <h1>Myths about CSS</h1>
+        </section>
+
+        <section>
+          <h6>Myth #1</h6>
+          <h2>CSS is weird/confusing/magic</h2>
+
+          <p class="fragment">At its heart, CSS is very simple:</p>
+          <p class="fragment"><strong>rules</strong> apply <strong>properties</strong> to <strong>elements</strong></p>
+          <p class="fragment"><strong>more specific</strong> styles override<br><strong>less specific</strong> ones</p>
+          <p class="fragment">It’s getting more powerful and better supported, but not more <strong>complex</strong>.</p>
+
+          <aside class="notes">
+            <p>This is a SMART PERSON, who admits that CSS is hard.</p>
+            <p>
+              Just because something is hard doesn’t mean it's not worth
+              trying to understand.
+            </p>
+          </aside>
+        </section>
+
+        <section>
+          <h6>Myth #2</h6>
+          <h2>CSS isn’t “real” code</h2>
+          <p class="fragment">You write it in a text editor</p>
+          <p class="fragment">It affects the behaviour of your software</p>
+          <p class="fragment"><strong>Surprise!</strong> HTML + CSS is Turing complete</p>
+
+          <aside class="notes">
+            <p>By “behaviour” I mean the interaction between users and software, which goes both ways.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h6>Myth #3</h6>
+          <h2>CSS encourages bad coding habits</h2>
+
+          <p class="fragment">Any tool can be abused</p>
+          <p class="fragment">I used PHP for ten years<br>and I turned out okay<br><span class="fragment">(so did Facebook)</span></p>
+          <p class="fragment">Bad coding habits don't come from bad tools, they come from <strong>bad attitudes</strong></p>
+        </section>
+
+        <section>
+          <h6>Myth #4</h6>
+          <h2>CSS is just cosmetic</h2>
+          <p class="fragment">Nobody said this about the <code>&lt;table&gt;</code> tags we were all hard-coding in the early 2000s</p>
+          <p class="fragment">More and more, CSS implements behaviour</p>
+          <p class="fragment">Cosmetics directly add business value</p>
+
+          <aside class="notes">
+            <p>My old boss (not pictured) went so far as to call the visual design part of a project the “lipstick layer”</p>
+
+            <p>
+              So I have a bit of a chip on my shoulder about CSS. But the more I
+              started thinking consciously about all this stuff, the more I
+              started noticing tweets like these:
+            </p>
+          </aside>
+        </section>
+
+        <section>
+          <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I&#39;m tired of people saying that CSS is a useless skill to have. I built up my whole career around it and I&#39;m proud of the work I&#39;ve done and what I&#39;ve learned. Stop minimizing this skill just because you think it&#39;s hard.<br><br>For some of us, it&#39;s a primary means to make a living.</p>&mdash; crazy witch asian (@jina) <a href="https://twitter.com/jina/status/1038851917441425408?ref_src=twsrc%5Etfw">September 9, 2018</a></blockquote>
+        </section>
+
+        <section>
+          <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I&#39;m at a women in tech conference and the engineers are so bad at hiding their contempt for front end design. Guess who are most of the web designers I meet? They&#39;re women. Yet I sat there listening to how CSS is an illogical and finnicky language. Now that&#39;s discomfort</p>&mdash; Sisi ✨💎✨ (@six6jiang) <a href="https://twitter.com/six6jiang/status/1048278200445542406?ref_src=twsrc%5Etfw">October 5, 2018</a></blockquote>
+        </section>
+
+        <section>
+          <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The bulk of my CSS knowledge that I learned from someone has come from women. The way we/the-entire-web writes CSS has largely been shaped by women. So yeaaaaaaaaaah, some of you are really trying it with these takes on &#39;simple ole CSS&#39; and I am definitely side-eyeing you.</p>&mdash; Heather Buchel (@hbuchel) <a href="https://twitter.com/hbuchel/status/1039761274199060480?ref_src=twsrc%5Etfw">September 12, 2018</a></blockquote>
+        </section>
+
+        <section>
+          <blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">It&#39;s a crazy contrast to spend much of my day watching (over &amp; over, while I take notes, looking up specs &amp; reading) a video of presentation by one of the only experts in the world who understands &#39;auto&#39; in CSS — because she&#39;s one of the people who invents it — so that…</p>&mdash; Jen Simmons (@jensimmons) <a href="https://twitter.com/jensimmons/status/1038906603523719169?ref_src=twsrc%5Etfw">September 9, 2018</a></blockquote>
+          <blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">so that I know every possible detail with perfect precision, so I can teach it to all of you. Meanwhile, I keep opening twitter (I don&#39;t know why) to a stream of men telling a bunch of other CSS experts (who all, surprise, happen to be women) why they are wrong &amp; stupid &amp; wrong.</p>&mdash; Jen Simmons (@jensimmons) <a href="https://twitter.com/jensimmons/status/1038906604937269250?ref_src=twsrc%5Etfw">September 9, 2018</a></blockquote>
+        </section>
+        <section>
+          <blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">I know most of you men &quot;don&#39;t mean to&quot;... but you are seriously far more arrogant than your level of understanding deserves, and far too caught-up in the notion that if a woman knows more than you, your manhood is at risk. Must defend. With strength.<br><br>You make us want to quit.</p>&mdash; Jen Simmons (@jensimmons) <a href="https://twitter.com/jensimmons/status/1038906607135072257?ref_src=twsrc%5Etfw">September 9, 2018</a></blockquote>
+        </section>
+
+        <section>
+          <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Engineer: I think there are fundamental issues with CSS which mean it&#39;s a poor language.<br>Frontend developer: Maybe you just don&#39;t understand it?<br>Engineer: What&#39;s to understand!? It&#39;s just illogical.<br>FE Dev: Maybe if you just spent time...<br>Engineer: LOOK. CSS IS WOMEN&#39;S WORK.</p>&mdash; @heydon@mastodon.social (@heydonworks) <a href="https://twitter.com/heydonworks/status/1038845009674391552?ref_src=twsrc%5Etfw">September 9, 2018</a></blockquote>
+
+          <aside class="notes">
+            <p>While I was researching I came across this gem:</p>
+            <p>Would love to add some women to my startup team. CSS front end dev/UI/UX designers especially</p>
+            <p>So after reading all these tweets, I realised:</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>CSS <u>is</u> cosmetic!</h2>
+          <p class="fragment">When done well, it looks amazing</p>
+          <p class="fragment">A lot of straight dudes simply<br>refuse to try to understand it</p>
+          <p class="fragment">…they just complain when it isn’t there</p>
+          <p class="fragment">Almost everything worthwhile I’ve ever learned about CSS has been from a woman</p>
+        </section>
+
+        <section>
+          <h2>Some of my CSS heroes</h2>
+
+          <p>Molly Holzschlag</p>
+          <p>Jen Simmons</p>
+          <p>Sara Soueidan</p>
+          <p>Léa Verou</p>
+          <p>Estelle Weyl</p>
+
+          <aside class="notes">
+            <p>Of course, they’re some of the same people making these observations…</p>
+          </aside>
+        </section>
+
+        <section>
+          <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">There are a lot of well known amazing CSS developers who are women.<br>CSS as a skill is undervalued.<br><br>Correlation or causation?</p>&mdash; Estelle Weyl (@estellevw) <a href="https://twitter.com/estellevw/status/908673755190136834?ref_src=twsrc%5Etfw">September 15, 2017</a></blockquote>
+        </section>
+
+        <section>
+          <h2>
+            Our attitude to CSS<br>
+            directly reflects, and is reflected by,<br>
+            our attitude to the women in our teams
+          </h2>
+
+          <aside class="notes">
+            <p>That's my big generalisation. Not all CSS is written by women. Not all women write CSS.</p>
+            <p>But my suspicion is that women have a greater patience for this work.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Challenge</h2>
+
+          <p>Think about your own organisation. Who is responsible for the bulk of the CSS work?</p>
+
+          <aside class="notes">
+            <p>So let’s go back to those CSS myths, now that we have this context.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h6>Myths in context #4</h6>
+          <h2>CSS is just cosmetic</h2>
+          <p class="fragment">“The way your work looks is unimportant”</p>
+          <p class="fragment">“The way your work looks matters less than the way <strong>you</strong> look”</p>
+
+          <aside class="notes">
+            <p>This is pretty messed up.</p>
+            <p>“I prefer a natural look”</p>
+          </aside>
+        </section>
+
+        <section>
+          <img class="plain" src="images/normalize.png" />
+        </section>
+
+        <section>
+          <img class="plain" src="images/normalize-plain.png" />
+        </section>
+
+        <section>
+          <h6>Myths in context #3</h6>
+          <h2>CSS encourages bad coding habits</h2>
+          <p class="fragment">“I don’t understand your code,<br>so it must be wrong”</p>
+          <p class="fragment">Coming from anyone, this enforces an unhealthy and stigmatising power dynamic, but from a man to a woman, it doubles down on <strong>existing</strong> biases and stigmas</p>
+        </section>
+
+        <section>
+          <h6>Myths in context #2</h6>
+          <h2>CSS isn’t “real” code</h2>
+          <p class="fragment">“You don’t write real code”</p>
+          <p class="fragment">“You are not a real coder”</p>
+          <p class="fragment">“You don’t belong in this squad/team/company/career”</p>
+        </section>
+
+        <section>
+          <h6>Myths in context #1</h6>
+          <h2>CSS is weird/confusing/magic</h2>
+          <p class="fragment">“I’m afraid of you”</p>
+        </section>
+
+        <section>
+          <h2>…wait, what?</h2>
+          <aside class="notes">
+            <p>Consider how people have been treating women they’re afraid of for centuries:</p>
+          </aside>
+        </section>
+
+        <section>
+          <img class="plain" src="images/witch.jpg" alt="a witch burning">
+
+          <aside class="notes">
+            <p>This is a real thing that happened! History has echoes!</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Who are you to talk about this?</h2>
+
+          <p class="fragment">I’m not a woman…</p>
+          <p class="fragment">…but I also don’t think this<br>is a problem for women to fix.</p>
+
+          <aside class="notes">
+            <p>Women have been saying this stuff for years (and before CSS, there were other issues — in fact, programming itself used to be considered “women’s work”)</p>
+            <p>This is a problem caused and perpetuated by men, men can make it better, and we have a responsibility to shoulder that burden</p>
+            <p>I happen to enjoy CSS, so my job is a little easier</p>
+          </aside>
+        </section>
+
+        <section>
+          <h1>So what can I do?</h1>
+        </section>
+
+        <section>
+          <h2>Watch your mouth</h2>
+
+          <p>The way you talk about this stuff<br>matters to the people around you.</p>
+
+          <aside class="notes">
+            <p>Think about the way you talk and think about CSS, and front-end dev in general.</p>
+            <p>Stretch goal: become a champion of this stuff in your environment. Effect local attitude changes.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Learn your tools</h2>
+
+          <p>Take a course/<br>watch a video/<br>experiment on your own</p>
+
+          <aside class="notes">
+            <p>Everyone learns differently, but you have to actually do the learning.</p>
+            <p>Unless you work deep in the bowels of devops, CSS is almost certainly an inescapable part of your ecosystem</p>
+            <p>The women I listed above are not only doing this constantly, they are prolific producers of free content</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Learn alongside others</h2>
+
+          <p>Pair with the women in your team.</p>
+          <p>Let them lead you through their<br>thought process.</p>
+
+          <aside class="notes">
+            <p>Instead of throwing a problem over at your squad’s go-to CSS person, ask if you can pair with them on a solution.</p>
+            <p>Let them drive the session: you can learn so much by following someone else’s thought process.</p>
+            <p>It’s okay to feel lost! This is your brain informing you of new opportunities to learn.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Practise humble empathy</h2>
+          <p>Just because you don’t understand something doesn’t mean it’s not worth anyone’s time or effort.</p>
+        </section>
+
+        <section>
+          <h2 class="fragment">Watch your mouth</h2>
+          <h2 class="fragment">Learn your tools</h2>
+          <h2 class="fragment">Learn alongside others</h2>
+          <h2 class="fragment">Practise humble empathy</h2>
+        </section>
+
+        <section>
+          <h1>Thank you.</h1>
+
+          <p>Questions? Comments? Feedback?</p>
+          <p><a href="https://twitter.com/fauxparse">@fauxparse</a></p>
+
+          <h2>&lt;3</h2>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
 </html>

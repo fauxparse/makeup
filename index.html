@@ -59,7 +59,7 @@
         </section>
 
         <section>
-          <h1>(Real quick: What is CSS?)</h1>
+          <h1>(Real quick:<br>What is CSS?)</h1>
           <aside class="notes">
             <p>CSS, or Cascading Style Sheets, is kind of the de facto visual
             language of the internet. You may or may not know this, and that’s
@@ -84,17 +84,32 @@
           <img src="images/portrait.jpg" alt="CSS portrait"/>
           <aside class="notes">
             <p>...to this incredible work, "Francine" by CSS artist Diana Smith. Everything in this portrait is an HTML element styled, by hand, in CSS.</p>
+          </aside>
+        </section>
+
+        <section>
+          <img src="images/francine-code.png" alt="CSS portrait"/>
+          <aside class="notes">
+            <p>1,300 lines of HTML. 4,300 lines of CSS. Every individual freckle and vein and strand of hair individually typed in by hand.</p>
+            <p>To comprehend exactly how hard this is, you have to remember that the only thing you can make in HTML is a plain, colourless rectangle.</p>
+            <p>Thirteen hundred plain, colourless rectangles, transformed into a work of art.</p>
             <p>The other thing you need to know about CSS is that, in 1997, CSS almost made me fail high school Calculus.</p>
           </aside>
         </section>
 
         <section>
-          <img class="fragment" src="images/dragons.jpg" alt="Dragons of Autumn Twilight" style="height: 70vh; width: auto;"/>
+          <h1>1997</h1>
           <aside class="notes">
             <p>Actually, that’s unfair. Undiagnosed ADHD and a distinct lack of
             affinity for trigonometry almost made me fail Calculus. But also I
-            spent a lot of time reading books under the desk, and I don’t mean
-            Dragons Of Autumn Twilight.</p>
+            spent a lot of time reading books under the desk, and I don’t mean</p>
+          </aside>
+        </section>
+
+        <section>
+          <img src="images/dragons.jpg" alt="Dragons of Autumn Twilight" style="height: 70vh; width: auto;"/>
+          <aside class="notes">
+            <p>Dragons Of Autumn Twilight.</p>
           </aside>
         </section>
 
@@ -113,28 +128,38 @@
         </section>
 
         <section>
-          <img class="fragment" src="images/corpus.png" alt="The Canterbury Corpus" />
+          <h1>1999</h1>
           <aside class="notes">
-            <p>Fast forward a couple of years, and I’m in the second year of a Computer Science degree at Canterbury, having survived first-year university Calculus by an even narrower margin and vowed never to touch it again. The topic of this morning’s tutorial: Cascading Style Sheets. The example: a web page I’d built for the department as a part-time job, and which is still online to this day. I took the rest of the morning off.</p>
+            <p>Fast forward a couple of years, and I’m in the second year of a Computer Science degree at Canterbury, having survived first-year university Calculus by an even narrower margin and vowed never to touch it again. The topic of this morning’s tutorial: Cascading Style Sheets. The example: a web page I’d built for the department as a part-time job,</p>
           </aside>
         </section>
 
         <section>
-          <img class="fragment" src="images/dreamweaver.jpg" alt="Dreamweaver" />
+          <img src="images/corpus.png" alt="The Canterbury Corpus" />
           <aside class="notes">
-            <p>A couple of years later, fresh out of university, I got a job with a Christchurch web design firm. This is significant because I was the first person they’d hired who didn’t know how to use Dreamweaver. I coded all my web pages by hand in HotDog or Edit Plus — still with a lot of tables, although CSS 2 was out by now and I was starting to sneak some floats into my work. It was kind of a watershed moment for web design, the beginning of the end of a brief foray into WYSIWYG development, back to the old way of writing code to describe how we wanted the output to look, and although Flash took much longer to finally relinquish its grip on the hearts and minds of design school graduates, CSS was the shiny golden child of the internet. We were still a few years away from the great web renaissance of “Web 2.0”, but CSS was going to get us there.</p>
+            <p>and which is still online to this day. I took the rest of the morning off.</p>
           </aside>
         </section>
 
         <section>
-          <p class="fragment">[footage not found]</p>
+          <h1>2003</h1>
+          <img src="images/dreamweaver.jpg" alt="Dreamweaver" />
           <aside class="notes">
-            <p>I’m telling you all this personal history not to document my meteoric rise to the giddy heights of web design stardom*, but because in thinking about it while preparing this talk, I realised that CSS and I have kind of grown up together. I was using it when it was just for controlling text formatting, and I’m still using it now when it’s responsible for layout, animation, interactive behaviour, accessibility, and even art.</p>
+            <p>A few years later, fresh out of university, I got a job with a Christchurch web design firm. This is significant because I was the first person they’d hired who didn’t know how to use Dreamweaver. I coded all my web pages by hand in HotDog or Edit Plus — still with a lot of tables, although CSS 2 was out by now and I was starting to sneak some floats into my work. It was kind of a watershed moment for web design, the beginning of the end of a brief foray into WYSIWYG development, back to the old way of writing code to describe how we wanted the output to look, and although Flash took much longer to finally relinquish its grip on the hearts and minds of design school graduates, CSS was the shiny golden child of the internet. We were still a few years away from the great web renaissance of “Web 2.0”, but CSS was going to get us there.</p>
+            <p>I’m telling you all this personal history not to document my meteoric rise to the giddy heights of web design stardom,</p>
           </aside>
         </section>
 
         <section>
-          <blockquote class="fragment steve-quote">
+          <p>[footage not found]</p>
+          <aside class="notes">
+            <p>but because in thinking about it while preparing this talk, I realised that CSS and I have kind of grown up together. I was using it when it was just for controlling text formatting, and I’m still using it now when it’s responsible for layout, animation, interactive behaviour, accessibility, and even art.</p>
+            <p>As such, I’m fortunate to have a perspective on CSS that comes from an awareness of its history. I happen to love CSS, and so I get testimonials like this.</p>
+          </aside>
+        </section>
+
+        <section>
+          <blockquote class="steve-quote">
             <img src="images/steve.jpg" alt="Steve Purcell"/>
             <p>
               My grandad couldn't abide poorly polished shoes, so my mum would
@@ -147,16 +172,16 @@
             </p>
           </blockquote>
           <aside class="notes">
-            <p>As such, I’m fortunate to have a perspective on CSS that comes from an awareness of its history. I happen to love CSS, and so I get testimonials like this.</p>
             <p>But not everyone has this perspective, and so modern CSS, especially as part of a complex development setup, can seem confusing, daunting, or magical.</p>
+            <p>All of which is to say: if you don’t understand CSS or know what it is or where it came from, I get it.</p>
           </aside>
         </section>
 
         <section>
-          <h6>There are a lot of</h6>
+          <h2>There are a lot of</h2>
           <h1>Myths about CSS</h1>
           <aside class="notes">
-            <p>All of which is to say: if you don’t understand CSS or know what it is or where it came from, I get it. But I do think there are a lot of myths around CSS, and I want to unpick some of them. Alright? Great.</p>
+            <p>But I do think there are a lot of myths around CSS, and I want to unpick some of them. Alright? Great.</p>
           </aside>
         </section>
 
@@ -390,10 +415,23 @@
 
         <section data-transition="slide-in fade-out">
           <h6>Myths in context #1</h6>
-          <h2>CSS is weird/confusing/magic</h2>
+          <h2>CSS is weird/confusing</h2>
+          <p class="fragment">“You’re weird and confusing”</p>
+          <p class="fragment">“I can’t relate to what you’re doing…”</p>
+          <p class="fragment">“…so I’ll assume it’s unimportant…”</p>
+          <p class="fragment">“…and so are you.”</p>
+          <aside class="notes">
+            <p>If our work is divided along masculine/feminine lines, and that's how we decide value, then we’re back to the old problem of treating men and women as separate species. But this is the 21st century, and we’re bigger than that. Are we? We are.</p>
+          </aside>
+        </section>
+
+        <section data-transition="slide-in fade-out">
+          <h6>Myths in context #1</h6>
+          <h2>CSS is magic</h2>
           <p class="fragment">“I’m afraid of CSS”</p>
           <p class="fragment">“I’m afraid of you”</p>
           <aside class="notes">
+            <p>What about the magic part?</p>
             <p>Even if you mean "magic" as a compliment, this one reads pretty readily as “I’m afraid of CSS”. But have you ever stopped to think how short the leap is from there to “I’m afraid of you”?</p>
             <p>I know that sounds like I’m being hyperbolic. But our language matters! Whenever we talk about a person’s particular skill being “magic”, we are, at best, betraying our own jealousy of a mastery someone might have trained their whole life to achieve. At worst, we come across (whether we intend it or not) as accusing that person of having skills they don’t deserve or didn’t earn. And that intersection of fear, misunderstanding, and gender is a potent one with deep roots.</p>
           </aside>
@@ -442,7 +480,7 @@
           <h1>It’s my problem</h1>
           <h2>(it’s <u>our</u> problem)</h2>
           <aside class="notes">
-            <p>Gay and bisexual men can experience some of the same stigmatisation and hostility women face, while still benefitting from the way our society values our masculine attributes. It’s not as simple as the outdated idea of the "battle of the sexes". I’ve chosen to focus on this one axis for this presentation, but really I think it’s a way in to a larger discussion about gatekeeping, discrimination, and what Aurynn Shaw calls “Contempt Culture”: the idea that we create safe spaces for ourselves by exluding and devaluing others.</p>
+            <p>Gay and bisexual men can experience some of the same stigmatisation and hostility women face, while still benefitting from the way our society values our masculine attributes. People of colour experience different challenges that intersect with gender imbalances. It’s not as simple as the outdated idea of the "battle of the sexes". I’ve chosen to focus on this one axis for this presentation, but really I think it’s a way in to a larger discussion about gatekeeping, discrimination, and what Aurynn Shaw calls “Contempt Culture”: the idea that we create safe spaces for ourselves by exluding and devaluing others.</p>
           </aside>
         </section>
 
@@ -450,7 +488,7 @@
           <h1>I &lt;3 CSS</h1>
           <aside class="notes">
             <p>I'm talking from my own experience as a front-end developer who talks to other front-end developers, so again, CSS was an easy way in for me, but there are analogues wherever you are.</p>
-            <p>I love CSS and I love the people who care about it, but I have interactions with other people too. We all do.</p>
+            <p>Another scale that comes up is what constitutes a “real” programming language. At one end you have “hard” languages like C and Haskell and Rust, and at the other end you have things like PHP and especially WordPress, that might be an entry point for people who don't come from a “traditional” computer science or engineering background, and as such have completely avoided Calculus.</p>
           </aside>
         </section>
 
@@ -469,6 +507,7 @@
           <aside class="notes">
             <p>Number one is watch your mouth. The way we talk about this stuff matters to the people around us. Particularly, when we mouth off about stuff outside our own experience, we center and normalize ourselves and our own worldviews. Coupled with a culture that values some kinds of work above others, and prioritises functionality over aesthetics, we unwittingly leverage existing prejudices to prop ourselves up at others’ expense.</p>
             <p>Take a moment to think about the way you talk about the work others do. If you would say “it’s finished, except for the styling”, would you expect someone else to say “it’s all done, it just needs the database layer” or “the UI’s finished and tested, it just needs someone to write the React code, any volunteers”?</p>
+            <p>My friend Laura’s advice is to catch ourselves when we say the word "just". Is my idea of how much work something is the same as the person I'm talking to or about?</p>
           </aside>
         </section>
 
